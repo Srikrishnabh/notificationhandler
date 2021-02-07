@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package notifier;
+
+//
+message Notification {
+  string to = 1;
+  string from = 2;
+  string body = 3;
+  string subject = 4;
+  repeated Channel channels = 5;
+}
+
+message Channel {
+  ChannelType type = 1;
+  map<string, string> metadata = 2;
+}
+
+enum ChannelType {
+  EMAIL = 0;
+  SLACK = 1;
+}
+
+

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: consumer
+  namespace: kafka
+spec:
+  containers:
+  - name: consumer
+    image: srikrishnabh/consumer:1.0
+    imagePullPolicy: IfNotPresent
+#  nodeName: kubemaster-weave #test-purpose
